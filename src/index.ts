@@ -15,6 +15,7 @@ export class AceEditorDirective {
   _theme:string = "monokai";
   _mode:string = "html";
   _autoUpdateContent:boolean = true;
+  @Input()
   editor:any;
   oldText:any;
 
