@@ -1,5 +1,5 @@
 {
-  "name": "ng2-ace-editor",
+  "name": "obehave-ng2-ace-editor-fork",
   "version": "0.0.21",
   "description": "Ace editor integration with typescript for angular 2.",
   "main": "ng2-ace-editor.js",
