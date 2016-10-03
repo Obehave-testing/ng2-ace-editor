@@ -105,13 +105,7 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
         });
         Object.defineProperty(AceEditorDirective.prototype, "setup", {
             set: function (setup) {
-                if (!setup) {
-                    this._setup = function () {
-                        return console.log('No setup function passed in.');
-                    };
-                } else {
-                    this._setup = setup;
-                }
+                this._setup = setup;
             },
             enumerable: true,
             configurable: true
