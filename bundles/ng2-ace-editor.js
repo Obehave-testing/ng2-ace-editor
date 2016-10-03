@@ -33,7 +33,6 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
         }
         AceEditorDirective.prototype.init = function () {
             var ace = this.editor;
-            this._setup(this.editor, ace);
             this.editor.setOptions(this._options || {});
             this.editor.setTheme("ace/theme/" + this._theme);
             this.editor.getSession().setMode("ace/mode/" + this._mode);
@@ -47,6 +46,11 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
                 if (typeof _this.oldText !== 'undefined') _this.textChanged.emit(newVal);
                 _this.oldText = newVal;
             });
+        };
+        AceEditorDirective.prototype.ngOnInit = function () {
+            if (this._setup) {
+                this._setup(this.editor, {});
+            }
         };
         Object.defineProperty(AceEditorDirective.prototype, "options", {
             set: function (options) {

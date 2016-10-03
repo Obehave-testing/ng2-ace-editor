@@ -1,4 +1,4 @@
-import {Directive, EventEmitter, Output, ElementRef, Input} from "@angular/core";
+import {Directive, EventEmitter, Output, ElementRef, Input, OnInit} from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
@@ -8,7 +8,7 @@ declare var ace:any;
 @Directive({
     selector: '[ace-editor]'
 })
-export class AceEditorDirective {
+export class AceEditorDirective implements OnInit {
     @Output('textChanged') textChanged = new EventEmitter();
     _options:any = {};
     _readOnly:boolean = false;
@@ -29,7 +29,6 @@ export class AceEditorDirective {
 
     init() {
         let ace = this.editor;
-        this._setup(this.editor, ace);
         this.editor.setOptions(this._options || {});
         this.editor.setTheme(`ace/theme/${this._theme}`);
         this.editor.getSession().setMode(`ace/mode/${this._mode}`);
@@ -44,6 +43,12 @@ export class AceEditorDirective {
                 this.textChanged.emit(newVal);
             this.oldText = newVal;
         });
+    }
+
+    ngOnInit() {
+        if (this._setup) {
+            this._setup(this.editor, {});
+        }
     }
 
     @Input() set options(options:any) {

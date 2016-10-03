@@ -1,8 +1,8 @@
-import { EventEmitter, ElementRef } from "@angular/core";
+import { EventEmitter, ElementRef, OnInit } from "@angular/core";
 import "brace";
 import "brace/theme/monokai";
 import "brace/mode/html";
-export declare class AceEditorDirective {
+export declare class AceEditorDirective implements OnInit {
     textChanged: EventEmitter<{}>;
     _options: any;
     _readOnly: boolean;
@@ -15,6 +15,7 @@ export declare class AceEditorDirective {
     constructor(elementRef: ElementRef);
     init(): void;
     initEvents(): void;
+    ngOnInit(): void;
     options: any;
     readOnly: any;
     theme: any;
