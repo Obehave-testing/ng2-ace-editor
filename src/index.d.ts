@@ -1,7 +1,7 @@
-import { EventEmitter, ElementRef } from '@angular/core';
-import 'brace';
-import 'brace/theme/monokai';
-import 'brace/mode/html';
+import { EventEmitter, ElementRef } from "@angular/core";
+import "brace";
+import "brace/theme/monokai";
+import "brace/mode/html";
 export declare class AceEditorDirective {
     textChanged: EventEmitter<{}>;
     _options: any;
@@ -11,7 +11,7 @@ export declare class AceEditorDirective {
     _autoUpdateContent: boolean;
     oldText: any;
     editor: any;
-    setup: Function;
+    _setup: any;
     constructor(elementRef: ElementRef);
     init(): void;
     initEvents(): void;
@@ -21,4 +21,5 @@ export declare class AceEditorDirective {
     mode: any;
     text: any;
     autoUpdateContent: any;
+    setup: any;
 }
