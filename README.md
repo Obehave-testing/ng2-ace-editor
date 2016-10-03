@@ -3,8 +3,8 @@
 [![npm version](https://badge.fury.io/js/ng2-ace-editor.svg)](https://www.npmjs.com/package/ng2-ace-editor) 
 Ace editor integration with typescript for angular 2.
 
-# Install
-`npm i -s ng2-ace-editor`
+# Install in your project
+`npm install ng2-ace-editor --save`
 
 # Sample Usage
 
@@ -39,6 +39,7 @@ import 'brace/mode/sql';
   directives: [AceEditorDirective],
   template: `
   <div ace-editor
+       [setup]="function(editor,ace){...}"
        [text]="text"
        [mode]="'sql'"
        [theme]="'clouds'"
@@ -58,3 +59,9 @@ export class MyComponent {
     }
 }
 ```
+
+# Developing
+
+1. Install dependencies: `npm install`.
+1. // hack hack hack
+1. Build your changes: `npm run build`
