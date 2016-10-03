@@ -87,10 +87,7 @@ export class AceEditorDirective implements OnInit {
     }
 
     @Input() set setup(setup:any) {
-        if (!setup) {
-            this._setup = () => console.log('No setup function passed in.');
-        } else {
-            this._setup = setup;
-        }
+        this._setup = setup;
+
     }
 }
