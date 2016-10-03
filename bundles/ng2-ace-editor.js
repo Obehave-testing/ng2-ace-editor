@@ -98,6 +98,7 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
             configurable: true
         });
         __decorate([core_1.Output('textChanged'), __metadata('design:type', Object)], AceEditorDirective.prototype, "textChanged", void 0);
+        __decorate([core_1.Input(), __metadata('design:type', Object)], AceEditorDirective.prototype, "editor", void 0);
         __decorate([core_1.Input(), __metadata('design:type', Object), __metadata('design:paramtypes', [Object])], AceEditorDirective.prototype, "options", null);
         __decorate([core_1.Input(), __metadata('design:type', Object), __metadata('design:paramtypes', [Object])], AceEditorDirective.prototype, "readOnly", null);
         __decorate([core_1.Input(), __metadata('design:type', Object), __metadata('design:paramtypes', [Object])], AceEditorDirective.prototype, "theme", null);
