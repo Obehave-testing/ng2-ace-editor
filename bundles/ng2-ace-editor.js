@@ -49,7 +49,7 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
         };
         AceEditorDirective.prototype.ngOnInit = function () {
             if (this._setup) {
-                this._setup(this.editor, {});
+                this._setup(this.editor, ace);
             }
         };
         Object.defineProperty(AceEditorDirective.prototype, "options", {

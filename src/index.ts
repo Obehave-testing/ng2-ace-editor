@@ -47,7 +47,7 @@ export class AceEditorDirective implements OnInit {
 
     ngOnInit() {
         if (this._setup) {
-            this._setup(this.editor, {});
+            this._setup(this.editor, ace);
         }
     }
 
