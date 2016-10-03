@@ -32,6 +32,8 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
             this.initEvents();
         }
         AceEditorDirective.prototype.init = function () {
+            var ace = this.editor;
+            this.setup(this.editor, ace);
             this.editor.setOptions(this._options || {});
             this.editor.setTheme("ace/theme/" + this._theme);
             this.editor.getSession().setMode("ace/mode/" + this._mode);
@@ -98,7 +100,7 @@ System.registerDynamic("src/index", ["@angular/core", "brace", "brace/theme/mono
             configurable: true
         });
         __decorate([core_1.Output('textChanged'), __metadata('design:type', Object)], AceEditorDirective.prototype, "textChanged", void 0);
-        __decorate([core_1.Input(), __metadata('design:type', Object)], AceEditorDirective.prototype, "editor", void 0);
+        __decorate([core_1.Input(), __metadata('design:type', Function)], AceEditorDirective.prototype, "setup", void 0);
         __decorate([core_1.Input(), __metadata('design:type', Object), __metadata('design:paramtypes', [Object])], AceEditorDirective.prototype, "options", null);
         __decorate([core_1.Input(), __metadata('design:type', Object), __metadata('design:paramtypes', [Object])], AceEditorDirective.prototype, "readOnly", null);
         __decorate([core_1.Input(), __metadata('design:type', Object), __metadata('design:paramtypes', [Object])], AceEditorDirective.prototype, "theme", null);

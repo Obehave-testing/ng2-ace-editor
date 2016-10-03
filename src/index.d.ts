@@ -9,8 +9,9 @@ export declare class AceEditorDirective {
     _theme: string;
     _mode: string;
     _autoUpdateContent: boolean;
-    editor: any;
     oldText: any;
+    editor: any;
+    setup: Function;
     constructor(elementRef: ElementRef);
     init(): void;
     initEvents(): void;

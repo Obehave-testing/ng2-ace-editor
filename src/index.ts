@@ -15,9 +15,10 @@ export class AceEditorDirective {
   _theme:string = "monokai";
   _mode:string = "html";
   _autoUpdateContent:boolean = true;
-  @Input()
-  editor:any;
   oldText:any;
+  editor:any;
+  @Input()
+  setup:Function;
 
   constructor(elementRef: ElementRef) {
     let el = elementRef.nativeElement;
@@ -28,6 +29,8 @@ export class AceEditorDirective {
   }
 
   init() {
+    let ace = this.editor;
+    this.setup(this.editor,ace);
     this.editor.setOptions(this._options || {});
     this.editor.setTheme(`ace/theme/${this._theme}`);
     this.editor.getSession().setMode(`ace/mode/${this._mode}`);
